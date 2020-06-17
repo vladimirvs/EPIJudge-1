@@ -20,7 +20,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: Parity.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: parity.py": {
@@ -65,7 +65,7 @@ problem_mapping = {
                 "passed": 0,
                 "total": 10000
             },
-            "Python: closest_int_same_weight.py": { 
+            "Python: closest_int_same_weight.py": {
                 "passed": 0,
                 "total": 10000
             }
@@ -104,7 +104,7 @@ problem_mapping = {
                 "total": 10002
             },
             "Java: PowerXY.java": {
-                "passed": 0,
+                "passed": 10002,
                 "total": 10002
             },
             "Python: power_x_y.py": {
@@ -118,7 +118,7 @@ problem_mapping = {
                 "total": 19952
             },
             "Java: ReverseDigits.java": {
-                "passed": 0,
+                "passed": 19952,
                 "total": 19952
             },
             "Python: reverse_digits.py": {
@@ -190,7 +190,7 @@ problem_mapping = {
                 "total": 204
             },
             "Java: DutchNationalFlag.java": {
-                "passed": 0,
+                "passed": 204,
                 "total": 204
             },
             "Python: dutch_national_flag.py": {
@@ -260,7 +260,7 @@ problem_mapping = {
                 "total": 402
             },
             "Java: BuyAndSellStock.java": {
-                "passed": 0,
+                "passed": 402,
                 "total": 402
             },
             "Python: buy_and_sell_stock.py": {
