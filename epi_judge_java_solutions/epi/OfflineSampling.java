@@ -18,6 +18,7 @@ public class OfflineSampling {
     for (int i = 0; i < k; ++i) {
       // Generate a random int in [i, A.size() - 1].
       Collections.swap(A, i, i + gen.nextInt(A.size() - i));
+      
     }
   }
 

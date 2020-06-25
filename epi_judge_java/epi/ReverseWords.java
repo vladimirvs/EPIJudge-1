@@ -1,28 +1,64 @@
 package epi;
+
 import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TimedExecutor;
+
+import java.util.Stack;
+
 public class ReverseWords {
 
-  public static void reverseWords(char[] input) {
-    // TODO - you fill in here.
-    return;
-  }
-  @EpiTest(testDataFile = "reverse_words.tsv")
-  public static String reverseWordsWrapper(TimedExecutor executor, String s)
-      throws Exception {
-    char[] sCopy = s.toCharArray();
 
-    executor.run(() -> reverseWords(sCopy));
 
-    return String.valueOf(sCopy);
-  }
+    public static void reverseWords(char[] input) {
 
-  public static void main(String[] args) {
-    System.exit(
-        GenericTest
-            .runFromAnnotations(args, "ReverseWords.java",
-                                new Object() {}.getClass().getEnclosingClass())
-            .ordinal());
-  }
+        int n = input.length;
+        // First, reverses the whole string.
+        reverse(input, 0, n - 1);
+
+        // Second, Reverses each word in the string.
+        int start = 0, finish = 0;
+        while (start < n) {
+            while (start < finish || start < n && input[start] == ' ') {
+                ++start; // Skip spaces chars.
+            }
+            while (finish < start || finish < n && input[finish] != ' ') {
+                ++finish; // Skip non-spaces chars.
+            }
+            reverse(input, start, finish - 1);
+        }
+    }
+
+    private static void reverse(char[] array, int start, int end) {
+        while (start < end) {
+            char tmp = array[start];
+            array[start++] = array[end];
+            array[end--] = tmp;
+        }
+    }
+
+    @EpiTest(testDataFile = "reverse_words.tsv")
+    public static String reverseWordsWrapper(TimedExecutor executor, String s)
+            throws Exception {
+        char[] sCopy = s.toCharArray();
+
+        executor.run(() -> reverseWords(sCopy));
+
+        return String.valueOf(sCopy);
+    }
+
+    public static void main(String[] args) {
+    /*    char[] input = "KuAY rz7bx 1w4I dlLdfcypbVc A  VE ".toCharArray();
+        reverseWords(input);
+        String s = new String(input);
+        System.out.print("[");
+        System.out.print(s);
+        System.out.print("]");*/
+        System.exit(
+                GenericTest
+                        .runFromAnnotations(args, "ReverseWords.java",
+                                new Object() {
+                                }.getClass().getEnclosingClass())
+                        .ordinal());
+    }
 }
