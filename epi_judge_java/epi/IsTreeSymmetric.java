@@ -3,7 +3,6 @@ import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 public class IsTreeSymmetric {
   @EpiTest(testDataFile = "is_tree_symmetric.tsv")
-
   public static boolean isSymmetric(BinaryTreeNode<Integer> tree) {
     // TODO - you fill in here.
     return true;
